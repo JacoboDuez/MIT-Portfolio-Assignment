@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+      <title>UTAH National Parks</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+      <style type="text/css">
+        .map {
+          position:relative;
+          /* float:left; */
+          width: 100vw;
+          height:100vh;
+          border: grey 1px solid;
+        }
+        body{
+            background-color: rgb(31,78,120);
+        }
+        p{
+            color:white;
+            font-style:oblique;
+        }
+      </style>
+
+      <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+      <script type="text/javascript" src="bingMap.js"></script>
+
+      <script type = "text/javascript">
+        function getMap() {
+          var maps = document.getElementsByClassName("map");
+          for(var t=0; t < maps.length; t++) {
+            bingMap.displayMap(maps[t]);
+          }
+        }
+        function Move(){
+            var maps = document.getElementsByClassName("map");
+            for(var t=0;t<maps.length;t++){
+                bingMap.Move();
+            }
+        }
+      </script>
+
+  </head>
+
+      <body >
+
+      <div style="width:100%">
+      <p>
+      Map Displaying Markers
+      <div>
+        <button type="submit" onclick="getMap();">Show National Parks Near Utah</button>
+      </div>
+      </p>
+
+      <div id='map3'
+           class='map'
+           data-mapdata='center:36.373200506102464, -112.33044767025915; zoom:7;pushpin:36.373200506102464, -112.33044767025915; pushpin:37.30887107990323, -113.03294787134537; pushpin: 43.792187273555506, -110.68281260661105; pushpin:44.486284352427695, -110.56398347778794; pushpin:37.593033, -112.189186; pushpin:38.611050, -109.608109; pushpin:40.954231, -112.209427; pushpin:36.918999, -111.476097;'></div>
+      </div>
+  </body>
+</html>
